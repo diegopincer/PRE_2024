@@ -4,10 +4,10 @@ import cv2
 # Modèle pour detecter des objets sur une image fourni
 
 # Carregar o modelo YOLOv8 pré-treinado
-model = YOLO('SOv2.pt')  # on peut choisir d'autres modèles comme 'yolov8s.pt', m, l et x
+model = YOLO('yolo_datasets/SOv2.pt')  # on peut choisir d'autres modèles comme 'yolov8s.pt', m, l et x
 
 # Inicializar a captura de vídeo
-cap = cv2.VideoCapture(1)  # 0 geralmente se refere à webcam padrão do notebook
+cap = cv2.VideoCapture(0)  # 0 geralmente se refere à webcam padrão do notebook
 
 while True:
     # Capturar frame-by-frame
@@ -16,7 +16,9 @@ while True:
         break
 
     # Realizar a detecção
-    results = model.predict(source=1, save=True, conf=0.3, show=True,)
+    #results = model.predict(source=1, save=True, conf=0.3, show=True,)
+    results = model.predict(source=0, save=True, conf=0.3, show=True)
+
 
     # Renderizar resultados diretamente no frame
     annotated_frame = results[0].plot()

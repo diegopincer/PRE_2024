@@ -3,7 +3,7 @@ from ultralytics import YOLO
 import time
 
 # Load YOLOv8 nano pretrained model for segmentation
-model = YOLO('yolov8n-seg.pt')
+model = YOLO('yolo_datasets/yolov8n-seg.pt')
  
 # Open the video file
 video_path = "cars.MOV"

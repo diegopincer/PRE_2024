@@ -8,10 +8,10 @@ from ultralytics.utils.plotting import Annotator, colors
 track_history = defaultdict(lambda: [])
 
 # Load the YOLO model with segmentation capabilities
-model = YOLO("yolov8n-seg.pt")
+model = YOLO("yolo_datasets/yolov8n-seg.pt")
 
 # Open the video file
-cap = cv2.VideoCapture("F1.mp4")
+cap = cv2.VideoCapture("videos/F1.mp4")
 
 # Retrieve video properties: width, height, and frames per second
 w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))

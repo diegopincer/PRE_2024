@@ -5,7 +5,7 @@ import torch
 from ultralytics import YOLO
 
 # Carregar o modelo YOLOv8 pré-treinado
-model = YOLO('yolov8n.pt')  # on peut choisir d'autres modèles comme 'yolov8s.pt', m, l et x
+model = YOLO('yolo_datasets/yolov8n.pt')  # on peut choisir d'autres modèles comme 'yolov8s.pt', m, l et x
 
 # Realizar a detecção
 results = model.predict(source='https://www.youtube.com/watch?v=LqBgPhyoCz0', save=True, conf=0.4, show=True, stream=True)  # save=False e show=False para não salvar ou mostrar a imagem automaticamente

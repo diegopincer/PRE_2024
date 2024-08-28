@@ -4,10 +4,10 @@ import numpy as np
 from ultralytics import YOLO
 
 # Load the YOLOv8 model
-model = YOLO("yolov8m.pt")
+model = YOLO("yolo_datasets/yolov8n.pt")
 
 # Open the video file
-cap = cv2.VideoCapture("arc.mp4")
+cap = cv2.VideoCapture("videos/arc.mp4")
 
 # Store the track history
 track_history = defaultdict(lambda: [])
@@ -53,5 +53,6 @@ while cap.isOpened():
         break
 
 # Release the video capture object and close the display window
+# Términer la capture video d'object et fermer la fenettre d'affiche
 cap.release()
 cv2.destroyAllWindows()
